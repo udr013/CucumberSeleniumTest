@@ -16,6 +16,21 @@
             <version>1.2.4</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>1.2.4</version>
+            <scope>test</scope>
+        </dependency>
+        <!--junit needed for cucumber-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!--cucumber minimal dependencies-->
+
         <!--IF USING SPING (DEPENDENCY INJECTION)-->
         <!--
         <dependency>
@@ -25,13 +40,7 @@
             <scope>test</scope>
         </dependency>
         -->
-        <!--IF USING SPING (DEPENDENCY INJECTION)-->
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.4</version>
-            <scope>test</scope>
-        </dependency>
+
         <!--To use the lambda expressions API to write the Step Definitions-->
         <!--
         <dependency>
@@ -41,15 +50,13 @@
             <scope>test</scope>
         </dependency>
         -->
-        <!--To use the lambda expressions API to write the Step Definitions-->
-        <!--junit needed for cucumber-->
+
+        <!--needed for autmatic testing in browser-->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.47.1</version>
         </dependency>
-        <!--cucumber minimal dependencies-->
     </dependencies>
 
 </project>

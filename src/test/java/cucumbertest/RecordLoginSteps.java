@@ -34,7 +34,7 @@ public class RecordLoginSteps {
     public void iFillInMyUsernameAndPassword() throws Throwable {
         webdriver.findElement(By.name("username")).sendKeys("mark");
         webdriver.findElement(By.name("password")).sendKeys("test");
-        webdriver.findElement(By.className("butto")).click();
+        webdriver.findElement(By.className("button")).click();
     }
 
     @Then("^i see my collection$")

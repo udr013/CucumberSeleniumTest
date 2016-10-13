@@ -4,6 +4,7 @@ import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,10 +30,17 @@ public class RecordLoginSteps {
 //        webdriver.findElement(By.linkText("Collection")).click();
 //    }
 
-    @Then("^i click on \"([^\"]*)\" tab$")
-    public void iClickOnTab(String tab) throws Throwable {
+    @When("^i click on \"([^\"]*)\"$")
+    public void iClickOnTab(String tabLink) throws Throwable {
 
-        webdriver.findElement(By.linkText(tab)).click();
+        webdriver.findElement(By.linkText(tabLink)).click();
+        Thread.sleep(1000);
+    }
+
+    @Then("^i click on ([^\"]*)$")
+    public void iClickOnTabLink(String link) throws Throwable {
+
+        webdriver.findElement(By.linkText(link)).click();
         Thread.sleep(1000);
     }
 
@@ -60,7 +68,7 @@ public class RecordLoginSteps {
         //Assert.assertEquals("we expect",String);
         webdriver.findElement(By.className("overviewTitle")).getText().equals("Collection overview:");
         //Assert.assertEquals("we expect",(webdriver.findElement(By.className("overviewTitle")).getText().equals("Collection overview:")==false));
-
+        Thread.sleep(4000);
 
     }
     @And("^i close the browser")

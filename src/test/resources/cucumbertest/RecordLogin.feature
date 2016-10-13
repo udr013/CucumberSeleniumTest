@@ -1,19 +1,31 @@
 Feature: Website should have secured login for collection
 
-
-  Scenario: Check collection page can only accessed when login so you get redirected to login screen
+  Background:
     Given I'm on my website
-    Then i click on "About" tab
-    Then i click on "Contact" tab
-    Then i click on "Collection" tab
-    Then i get redirected to login page
-    And  i fill in my username and password
-      | fields   | value |
-      | username | mark  |
-      | password | test  |
 
-    Then i see my collection
-    Then i click on "About" tab
-    Then i click on "Contact" tab
-    Then i click on "Logout" tab
+
+  Scenario Outline: Check collection page can only accessed when login so you get redirected to login screen
+
+    Then i click on <link>
+#    Then i click on "Contact" tab
+#    Then i click on "Collection" tab
+#    Then i get redirected to login page
     And i close the browser
+    Examples:
+      | link    |
+      | About      |
+      | Contact    |
+      | News       |
+      | Login      |
+      | Logout     |
+      | Collection |
+
+    Scenario:
+      When i click on "Collection" tab
+      And i fill in my username and password
+        | fields   | value |
+        | username | mark  |
+        | password | test  |
+
+      Then i see my collection
+

@@ -1,4 +1,4 @@
-package cucumbertest;
+package cucumbertest.cucumberSteps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

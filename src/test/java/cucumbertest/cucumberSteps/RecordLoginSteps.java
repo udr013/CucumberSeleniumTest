@@ -1,28 +1,29 @@
-package cucumbertest;
+package cucumbertest.cucumberSteps;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumbertest.cucumberSteps.abstractSteps.AbstractSteps;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
 
 
-public class RecordLoginSteps {
+public class RecordLoginSteps extends AbstractSteps {
 
 
-	WebDriver webdriver = null;
+
+	WebDriver webdriver = getWebDriver();
+
 
 	//Hooks like @Before and @After always run regardless of test results
 	@Before
 	public void openMyWebsite() throws Throwable {
 		System.out.println("using default @Before");
-		webdriver = new FirefoxDriver();
 		webdriver.navigate().to("https://recordcollector.herokuapp.com/");
 		webdriver.manage().window().maximize();
 	}
@@ -30,7 +31,7 @@ public class RecordLoginSteps {
 	@After
 	public void closeBrowser() throws Throwable {
 		System.out.println("using default @After");
-		webdriver.close();
+		webdriver = closeDriver();
 	}
 
 	//notice tests with Senarios with @web tag will also execute the defaults they always run!!!
@@ -52,7 +53,6 @@ public class RecordLoginSteps {
 	@When("^i click on \"([^\"]*)\" tab$")
 	public void i_click_on_tab(String arg1) throws Throwable {
 		webdriver.findElement(By.linkText(arg1)).click();
-		;
 	}
 
 //    @When("^i click on collection tab$")
@@ -96,12 +96,13 @@ public class RecordLoginSteps {
 	@Then("^i see my collection$")
 	public void iSeeMyCollection() throws Throwable {
 		//Assert.assertEquals("we expect",String);
-		webdriver.findElement(By.className("overviewTitle")).getText().equals("Collection overvie:");
-		Assert.assertEquals("we expect", (!webdriver.findElement(By.className("overviewTitle")).getText().equals
-				("Collection overview:")));
+		webdriver.findElement(By.className("overviewTitle")).getText().equals("Collection overview:");
+		Assert.assertEquals("we expect", (webdriver.findElement(By.className("overviewTitle")).getText().equals
+				("Collection overview:")),true);
 		Thread.sleep(4000);
+		}
 
 	}
 
 
-}
+

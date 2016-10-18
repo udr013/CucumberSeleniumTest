@@ -4,7 +4,7 @@ Feature: Website should have secured login for collection
 #  Background:
 #    Given I'm on my website
 
-  @Web
+
   Scenario Outline: Check collection page can only accessed when login so you get redirected to login screen
 
     Then i click on <link>

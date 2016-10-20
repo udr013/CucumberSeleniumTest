@@ -7,10 +7,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class AbstractSteps {
 
 	//Singleton pattern now handles quit correctly
-	private  static WebDriver webDriver;
+	private static WebDriver webDriver;
 
 	protected   WebDriver getWebDriver() {
-		if (webDriver == null) {  //instanciated driver for the first time
+		if (webDriver == null) {  //instance driver for the first time
 			webDriver = new FirefoxDriver();
 		}
 		return webDriver;

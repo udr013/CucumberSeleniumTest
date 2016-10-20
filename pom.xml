@@ -51,12 +51,13 @@
         </dependency>
         -->
 
-        <!--needed for automatic testing in browser, NOTE: best use with Firefox 45.4.0esr
-        issues with Higher versions of driver or brdowser-->
+        <!--needed for automatic testing in browser-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.53.1</version>
+            <!--2.47.1 works with firefox 49.0 on mint-->
+            <!--2.53.1 works with firefox 45.4.0esr win7-->
+            <version>2.47.1</version>
         </dependency>
     </dependencies>
 

@@ -51,11 +51,12 @@
         </dependency>
         -->
 
-        <!--needed for autmatic testing in browser-->
+        <!--needed for automatic testing in browser, NOTE: best use with Firefox 45.4.0esr
+        issues with Higher versions of driver or brdowser-->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>2.47.1</version>
+            <version>2.53.1</version>
         </dependency>
     </dependencies>
 

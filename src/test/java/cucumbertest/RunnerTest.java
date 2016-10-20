@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 		snippets = SnippetType.CAMELCASE,  // UNDERSCORE IS DEFAULT
 		format = {"pretty", "html:target/TestResults/html", "json:target/TestResults/json/"},
-		features = {"src/test/resources"}
-
+		features = {"src/test/resources"},
+		tags = {"@NewRecord"}
 )
 
 /**
